@@ -9,48 +9,12 @@ source env/bin/activate           进入虚拟环境
 deactivate                        退出虚拟环境 
 
 * 字符串和编码  
-ascii码只支持127个字符，gb2312则是包含中文和英文的编码，unicode编码支持所有语言
+ascii码只支持127个字符，gb2312则是包含中文和英文的编码，unicode编码支持所有语言，utf-8是可变长的编码、更节省存储空间
 
 |ascii|unicode|utf-8|
 |---|:-----:|:----:|
 |只支持数字和英文字母，1个字符|数字、字母、汉字都是2个字符|数字1-6个字符，字母1个字符，汉字3个字符|
 
-| ascii        | unicode    |  utf-8  |
-| --------   | -----:   | :----: |
-| 香蕉        | $1      |   5    |
-| 苹果        | $1      |   6    |
-| 草莓        | $1      |   7    |
-
-<table class="tg">
-  <tr>
-    <th class="tg-baqh" colspan="2">Some values</th>
-  </tr>
-  <tr>
-    <th class="tg-baqh">Material</th>
-    <th class="tg-baqh">Value</th>
-  </tr>
-  <tr>
-    <td class="tg-baqh">A</td>
-    <td class="tg-baqh">0.75</td>
-  </tr>
-  <tr>
-    <td class="tg-baqh">B</td>
-    <td class="tg-baqh">0.47</td>
-  </tr>
-  <tr>
-    <td class="tg-baqh">C</td>
-    <td class="tg-baqh">0.4 - 0.7</td>
-  </tr>
-  <tr>
-    <td class="tg-baqh">C</td>
-    <td class="tg-baqh">1.0 - 1.8</td>
-  </tr>
-  <tr>
-    <td class="tg-baqh">S</td>
-    <td class="tg-baqh">0.15 - 2.0</td>
-  </tr>
-  <tr>
-    <td class="tg-baqh">W</td>
-    <td class="tg-baqh">0.07 - 0.17</td>
-  </tr>
-</table>
+在计算机内存中使用Unicode编码，在网络传输和本地存储时使用utf-8编码  
+python中字符串用Unicode编码，字节流用utf-8编码  
+str的encode()方法可以编码为指定编码类型（utf-8/gb2312/...）的bytes并写入文件
