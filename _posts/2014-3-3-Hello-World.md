@@ -28,6 +28,8 @@ github使用步骤：
    git remote add origin "[http://github.com/XXX.git]"
 6. 将本地仓库的代码推送到服务器
    git push -u origin master
+7. 如果远程主机的版本比本地版本更新，推送时Git会报错，要求先在本地做git pull合并差异，然后再推送到远程主机。  
+这时，如果你一定要推送，可以使用--force选项。
 
 注意事项：
 1. 如果是自己搭建的gitlab，可能没有证书，网络不受信任
