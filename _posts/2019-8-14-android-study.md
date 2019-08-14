@@ -11,4 +11,4 @@ title: Android问题汇总
 解决方案：Handler是异步处理大师。开启一个子线程进行耗时操作，并通过Handler发送消息通知Activity更新UI  
 * 回调机制
 小明通过自身的callHelp方法调用了小红（new SuperCalculator()）的add方法，在调用的时候将自身的引用（this）当做参数一并传入，小红在使用计算器得出结果之后，回调了小明的fillBlank方法，将结果填在了黑板上的空格里。  
-以http请求为例：callback接口定义了setResponse(String response)抽象方法。首先在PreviewActivity（小明）中调用了AsynNetUtils（小红）的post()方法。post方法传入了Callback实例化的类。当post函数（小红）完成post请求得到响应值后，即可进行回调callback.setResponse(response)将结果显示在PreviewActivity中（小明的setResponse()定义了具体的显示方法）。
+以http请求为例：callback接口定义了setResponse(String response)抽象方法。首先在PreviewActivity（小明）中调用了AsynNetUtils（小红）的post()方法。post方法传入了Callback实例化的接口。当post函数（小红）完成post请求得到响应值后，即可进行回调callback.setResponse(response)将结果显示在PreviewActivity中（小明的callback.setResponse()重写了接口定义的方法）。
